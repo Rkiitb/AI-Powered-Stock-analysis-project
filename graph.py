@@ -14,7 +14,7 @@ from langchain_core.messages import HumanMessage,SystemMessage
 from pygooglenews import GoogleNews
 from langgraph.checkpoint.memory import MemorySaver  # Or your checkpointer
 import asyncio
-
+import pickle
 
 # env var
 os.environ['LANGCHAIN_TRACING_V2']='true'
@@ -400,4 +400,7 @@ checkpointer = MemorySaver()
 workflow = graph.compile(checkpointer=checkpointer) 
 
 
+
+# with open('workflow.pkl','wb') as f:
+#     pickle.dump(workflow,f)
 
